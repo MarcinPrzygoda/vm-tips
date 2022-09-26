@@ -21,6 +21,7 @@
 * [Postman](#postman)
   * [Install Postman](#install-postman)
   * [Update Postman](#update-postman)
+  * [Add Postman to dock](#add-postman-to-dock)
 * [Kafka](#kafka)
   * [Install/Update Kafka](#installupdate-kafka)
 * [Tomcat](#tomcat)
@@ -193,6 +194,23 @@ curl -Lo "postman.tar.gz" "https://dl.pstmn.io/download/latest/linux64" && mkdir
 https://www.postman.com/downloads/release-notes
 ```bash
 curl -Lo "postman.tar.gz" "https://dl.pstmn.io/download/latest/linux64" && rm -r "/opt/postman" && mkdir "/opt/postman" && tar -xzf "postman.tar.gz" --strip-components=1 -C "/opt/postman" && rm -r "postman.tar.gz"
+```
+
+## Add Postman to dock
+
+`sudo gedit /usr/share/applications/postman.desktop` and add:
+```bash
+[Desktop Entry]
+Type=Application
+Name=Postman
+GenericName=Postman
+Comment=API platform for building and using APIs
+Icon=/opt/postman/app/icons/icon_128x128.png
+TryExec=/opt/postman/Postman
+Exec=/opt/postman/Postman
+Terminal=false
+Categories=Development
+StartupWMClass=postman
 ```
 
 # Kafka
