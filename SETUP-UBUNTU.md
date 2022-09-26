@@ -8,30 +8,35 @@
   * [Enable minimize click action to dock](#enable-minimize-click-action-to-dock)
   * [Disable core dumps](#disable-core-dumps)
   * [Change `journald` size](#change-journald-size)
-  * [Settings: Appearance](#settings-appearance)
-  * [Settings: Power](#settings-power)
-  * [Settings: Keyboard](#settings-keyboard)
-  * [Settings: Users](#settings-users)
-  * [Install `chromium` (web browser, open-source version of Google Chrome)](#install-chromium-web-browser-open-source-version-of-google-chrome)
-  * [Install `curl` (transfers a URL)](#install-curl-transfers-a-url)
-  * [Install `dconf-editor` (graphical editor for gsettings and dconf)](#install-dconf-editor-graphical-editor-for-gsettings-and-dconf)
-  * [Install `gnome-tweaks` (customizes GNOME desktop)](#install-gnome-tweaks-customizes-gnome-desktop)
-  * [Install `gnome-shell-extension-manager` (extension manager for GNOME desktop)](#install-gnome-shell-extension-manager-extension-manager-for-gnome-desktop)
-  * [Install `jq` (command-line JSON processor)](#install-jq-command-line-json-processor)
-  * [Install `neofetch` (fast, highly customizable system info script)](#install-neofetch-fast-highly-customizable-system-info-script)
-  * [Install `pip` (package installer for Python)](#install-pip-package-installer-for-python)
-  * [Install `terminator` (multiple GNOME terminals in one window)](#install-terminator-multiple-gnome-terminals-in-one-window)
-  * [Install `tldr` (simplified and community-driven man pages)](#install-tldr-simplified-and-community-driven-man-pages)
-  * [Install `tree` (lists contents of directories in a tree-like format)](#install-tree-lists-contents-of-directories-in-a-tree-like-format)
-  * [Install `ubuntu-restricted-extras` (support for MP3 and unencrypted DVD playback, Microsoft TrueType core fonts, Adobe Flash plugin and codecs for common audio and video files)](#install-ubuntu-restricted-extras-support-for-mp3-and-unencrypted-dvd-playback-microsoft-truetype-core-fonts-adobe-flash-plugin-and-codecs-for-common-audio-and-video-files)
-  * [Install `vlc` (multimedia player)](#install-vlc-multimedia-player)
-  * [Install `yarn` (compiles Casper theme for Ghost)](#install-yarn-compiles-casper-theme-for-ghost)
+  * [Settings - Appearance](#settings---appearance)
+  * [Settings - Power](#settings---power)
+  * [Settings - Keyboard](#settings---keyboard)
+  * [Settings - Users](#settings---users)
+  * [Install `chromium`](#install-chromium)
+  * [Install `curl`](#install-curl)
+  * [Install `dconf-editor`](#install-dconf-editor)
+  * [Install `gnome-tweaks`](#install-gnome-tweaks)
+  * [Install `gnome-shell-extension-manager`](#install-gnome-shell-extension-manager)
+  * [Install `jq`](#install-jq)
+  * [Install `neofetch`](#install-neofetch)
+  * [Install `terminator`](#install-terminator)
+  * [Install `tldr`](#install-tldr)
+  * [Install `tree`](#install-tree)
+  * [Install `ubuntu-restricted-extras`](#install-ubuntu-restricted-extras)
+  * [Install `vlc`](#install-vlc)
+  * [Install `yarn`](#install-yarn)
   * [Add `New Document` Template](#add-new-document-template)
   * [Remove `Ctrl` + `Alt` + `Fn` shortcuts](#remove-ctrl--alt--fn-shortcuts)
   * [Remove `Ctrl` + `Alt` + `Arrow` shortcut](#remove-ctrl--alt--arrow-shortcut)
-  * [Remove `Ctrl` + `Shift` + `U` (toggle case in InteliJ IDEA) shortcut](#remove-ctrl--shift--u-toggle-case-in-intelij-idea-shortcut)
+  * [Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA](#remove-ctrl--shift--u-shortcut---toggle-case-in-intelij-idea)
   * [Fix Mozilla Firefox dark theme bug](#fix-mozilla-firefox-dark-theme-bug)
   * [Fix missing network after Resume from Suspend](#fix-missing-network-after-resume-from-suspend)
+* [Setup Vim](#setup-vim)
+  * [Install NeoVim](#install-neovim)
+  * [Install SpaceVim](#install-spacevim)
+  * [Configure SpaceVim](#configure-spacevim)
+  * [Install Nerd Font](#install-nerd-font)
+  * [Install VimTutor](#install-vimtutor)
 <!-- TOC -->
 
 # Create Virtual Machine
@@ -154,7 +159,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 * Add `SystemMaxUse=100M`
 * Restart with `sudo systemctl restart systemd-journald`
 
-## Settings: Appearance
+## Settings - Appearance
 
 `Settings` -> `Appearance`:
 * Style: `Dark`
@@ -164,47 +169,57 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 * Configure dock behavior:
   * Show trash: `Off`
 
-## Settings: Power
+## Settings - Power
 
 `Settings` -> `Power`:
 * Screen blank: `Never`
 
-## Settings: Keyboard
+## Settings - Keyboard
 
 `Settings` -> `Keyboard`:
 * `View and Customize shortcuts`:
   * `Switch windows of an app directly`: remove `Alt+F6`
 
-## Settings: Users
+## Settings - Users
 
 `Settings` -> `Users`:
 * Add photo from `~/Pictures`
 
-## Install `chromium` (web browser, open-source version of Google Chrome)
+## Install `chromium`
+
+Web browser, open-source version of Google Chrome
 
 ```bash
 sudo snap install chromium
 ```
 
-## Install `curl` (transfers a URL)
+## Install `curl`
+
+Transfers a URL
 
 ```bash
 sudo apt install curl
 ```
 
-## Install `dconf-editor` (graphical editor for gsettings and dconf)
+## Install `dconf-editor`
+
+Graphical editor for `gsettings` and `dconf`
 
 ```bash
 sudo apt install dconf-editor
 ```
 
-## Install `gnome-tweaks` (customizes GNOME desktop)
+## Install `gnome-tweaks`
+
+Customizes GNOME desktop
 
 ```bash
 sudo apt install gnome-tweaks
 ```
 
-## Install `gnome-shell-extension-manager` (extension manager for GNOME desktop)
+## Install `gnome-shell-extension-manager`
+
+Extension manager for GNOME desktop
 
 ```bash
 sudo apt install gnome-shell-extension-manager
@@ -216,25 +231,25 @@ Run `extension-manager` and install extensions:
 * `Clock Override`
 * `Force Quit`
 
-## Install `jq` (command-line JSON processor)
+## Install `jq`
+
+Command-line JSON processor
 
 ```bash
 sudo apt install jq
 ```
 
-## Install `neofetch` (fast, highly customizable system info script)
+## Install `neofetch`
+
+Fast, highly customizable system info script
 
 ```bash
 sudo apt install neofetch
 ```
 
-## Install `pip` (package installer for Python)
+## Install `terminator`
 
-```bash
-sudo apt install python3-pip
-```
-
-## Install `terminator` (multiple GNOME terminals in one window)
+Multiple GNOME terminals in one window
 
 ```bash
 sudo apt install terminator
@@ -243,6 +258,7 @@ sudo apt install terminator
 https://github.com/Stunkymonkey/nautilus-open-any-terminal
 
 ```bash
+sudo apt install python3-pip
 sudo apt install python3-nautilus
 pip install nautilus-open-any-terminal
 nautilus -q
@@ -260,7 +276,9 @@ rm -rf nautilus-open-any-terminal
 `sudo gedit /usr/share/applications/terminator.desktop`:
 * Change `Exec=terminator` to `Exec=terminator --title Terminal --working-directory=/home/mp/projects`
 
-## Install `tldr` (simplified and community-driven man pages)
+## Install `tldr`
+
+Simplified and community-driven man pages
 
 https://tldr.sh
 ```bash
@@ -268,25 +286,33 @@ sudo apt install npm
 sudo npm install -g tldr
 ```
 
-## Install `tree` (lists contents of directories in a tree-like format)
+## Install `tree`
+
+Lists content of directories in a tree-like format
 
 ```bash
 sudo apt install tree
 ```
 
-## Install `ubuntu-restricted-extras` (support for MP3 and unencrypted DVD playback, Microsoft TrueType core fonts, Adobe Flash plugin and codecs for common audio and video files)
+## Install `ubuntu-restricted-extras`
+
+Support for MP3 and unencrypted DVD playback, Microsoft TrueType core fonts, Adobe Flash plugin and codecs for common audio and video files
 
 ```bash
 sudo apt install ubuntu-restricted-extras
 ```
 
-## Install `vlc` (multimedia player)
+## Install `vlc`
+
+Multimedia player
 
 ```bash
 sudo snap install vlc
 ```
 
-## Install `yarn` (compiles Casper theme for Ghost)
+## Install `yarn`
+
+Compiles Casper theme for Ghost
 
 ```bash
 sudo apt install npm
@@ -318,7 +344,7 @@ EndSection
 In `dconf-editor` go to: `/org/gnome/desktop/wm/keybindings/`:
 * Find `switch-to-workspace-down` and other `switch-to`: put `['disabled']` instead of `default`
 
-## Remove `Ctrl` + `Shift` + `U` (toggle case in InteliJ IDEA) shortcut
+## Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA
 
 `Settings` -> `Region & Language` -> `Manage Installed Languages` -> `Remind Me Later`:
 * Change `Keyboard input method system` from `IBus` to `XIM`
@@ -345,3 +371,36 @@ case "${1}" in
 esac
 ```
 Then `sudo chmod +x /etc/pm/sleep.d/network_restart`
+
+# Setup Vim
+
+## Install NeoVim
+
+```bash
+sudo apt install neovim
+```
+
+## Install SpaceVim
+
+```bash
+curl -sLf "https://spacevim.org/install.sh" | bash
+```
+
+## Configure SpaceVim
+
+```bash
+sudo apt install fonts-powerline
+```
+`sudo gedit ~/.SpaceVim.d/init.toml` and change `statusline_separator = "nil"` to `statusline_separator = "arrow"`
+
+## Install Nerd Font
+
+Search for `SourceCodePro` on https://www.nerdfonts.com/font-downloads
+
+Download it and unzip it to `~/.local/share/fonts` and run `fc-cache -fv`
+
+## Install VimTutor
+
+```bash
+sudo apt install vim-runtime
+```
