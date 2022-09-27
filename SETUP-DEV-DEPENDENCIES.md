@@ -19,8 +19,7 @@
   * [Add IntelliJ IDEA Community to dock](#add-intellij-idea-community-to-dock)
   * [Configure IntelliJ IDEA Community](#configure-intellij-idea-community)
 * [Postman](#postman)
-  * [Install Postman](#install-postman)
-  * [Update Postman](#update-postman)
+  * [Install/Update Postman](#installupdate-postman)
   * [Add Postman to dock](#add-postman-to-dock)
 * [Kafka](#kafka)
   * [Install/Update Kafka](#installupdate-kafka)
@@ -147,7 +146,7 @@ sdk install springboot X.X.X
 
 https://www.jetbrains.com/idea/download/#section=linux
 ```bash
-VERSION="XXXX.X.X"; curl -Lo "ideaIC.tar.gz" "https://download.jetbrains.com/idea/ideaIC-${VERSION}.tar.gz" && mkdir "/opt/intellij-idea" && tar -xzf "ideaIC.tar.gz" --strip-components=1 -C "/opt/intellij-idea" && rm "ideaIC.tar.gz"
+VERSION="XXXX.X.X"; DIRECTORY="intellij-idea"; curl -Lo "${DIRECTORY}.tar.gz" "https://download.jetbrains.com/idea/ideaIC-${VERSION}.tar.gz" && [[ -d "/opt/${DIRECTORY}" ]] && rm -r "/opt/${DIRECTORY}"; mkdir "/opt/${DIRECTORY}" && tar -xzf "${DIRECTORY}.tar.gz" --strip-components=1 -C "/opt/${DIRECTORY}" && rm "${DIRECTORY}.tar.gz"
 ```
 
 ## Update IntelliJ IDEA Community
@@ -183,17 +182,11 @@ Open `InteliJ IDEA` -> `Welcome Screen` -> `Options menu` -> `Edit Custom VM Opt
 
 # Postman
 
-## Install Postman
-
-```bash
-curl -Lo "postman.tar.gz" "https://dl.pstmn.io/download/latest/linux64" && mkdir "/opt/postman" && tar -xzf "postman.tar.gz" --strip-components=1 -C "/opt/postman" && rm -r "postman.tar.gz"
-```
-
-## Update Postman
+## Install/Update Postman
 
 https://www.postman.com/downloads/release-notes
 ```bash
-curl -Lo "postman.tar.gz" "https://dl.pstmn.io/download/latest/linux64" && rm -r "/opt/postman" && mkdir "/opt/postman" && tar -xzf "postman.tar.gz" --strip-components=1 -C "/opt/postman" && rm -r "postman.tar.gz"
+DIRECTORY="postman"; curl -Lo "${DIRECTORY}.tar.gz" "https://dl.pstmn.io/download/latest/linux64" && [[ -d "/opt/${DIRECTORY}" ]] && rm -r "/opt/${DIRECTORY}"; mkdir "/opt/${DIRECTORY}" && tar -xzf "${DIRECTORY}.tar.gz" --strip-components=1 -C "/opt/${DIRECTORY}" && rm "${DIRECTORY}.tar.gz"
 ```
 
 ## Add Postman to dock
@@ -217,32 +210,39 @@ StartupWMClass=postman
 
 ## Install/Update Kafka
 
-https://github.com/apache/kafka/tags
-
 https://kafka.apache.org/downloads
 
-Download binary and unpack under `/opt/kafka`
+```bash
+VERSION="X.X.X"; DIRECTORY="kafka"; curl -Lo "${DIRECTORY}.tar" "https://downloads.apache.org/kafka/${VERSION}/kafka-${VERSION}-src.tgz" && [[ -d "/opt/${DIRECTORY}" ]] && rm -r "/opt/${DIRECTORY}"; mkdir "/opt/${DIRECTORY}" && tar -xf "${DIRECTORY}.tar" --strip-components=1 -C "/opt/${DIRECTORY}" && rm "${DIRECTORY}.tar"
+```
 
 # Tomcat
 
 ## Install/Update Tomcat
 
-https://github.com/apache/tomcat/tags
-
 https://tomcat.apache.org/download-10.cgi
 
-Download binary and unpack under `/opt/tomcat`
+```bash
+VERSION="X.X.X"; DIRECTORY="tomcat"; curl -Lo "${DIRECTORY}.tar.gz" "https://dlcdn.apache.org/tomcat/tomcat-10/v${VERSION}/bin/apache-tomcat-${VERSION}.tar.gz" && [[ -d "/opt/${DIRECTORY}" ]] && rm -r "/opt/${DIRECTORY}"; mkdir "/opt/${DIRECTORY}" && tar -xzf "${DIRECTORY}.tar.gz" --strip-components=1 -C "/opt/${DIRECTORY}" && rm "${DIRECTORY}.tar.gz"
+```
 
 # Docker
 
 ## Install `docker`
 
 ```bash
+# Install
 curl -s https://get.docker.com | bash
+# Manage Docker as a non-root user
 sudo usermod -aG docker "${USER}"
+# Run Docker daemon
+sudo systemctl enable containerd && sudo systemctl start containerd
 sudo systemctl enable docker && sudo systemctl start docker
+# Change the permissions of docker socket to be able to connect to the Docker daemon
 sudo chmod 666 /var/run/docker.sock
 ```
+
+https://docs.docker.com/engine/install/linux-postinstall/
 
 ## Update `docker`
 
@@ -255,6 +255,7 @@ Ubuntu Update is enough to update Docker
 ```bash
 sudo apt install bash-completion
 ```
+
 `sudo gedit ~/.bashrc` and add:
 ```bash
 # Bash completion
@@ -262,23 +263,31 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
 fi
 ```
+
+https://github.com/docker/cli/blob/master/contrib/completion/bash/docker
+
 ```bash
-sudo curl -Lo "/etc/bash_completion.d/docker" "https://raw.githubusercontent.com/docker/cli/master/contrib/completion/bash/docker"
+VERSION="X.X"; sudo curl -Lo "/etc/bash_completion.d/docker" "https://raw.githubusercontent.com/docker/cli/${VERSION}/contrib/completion/bash/docker"
 ```
 
 ## Enable IPv4 forwarding
 
-`sudo gedit /etc/sysctl.conf`, uncomment `net.ipv4.ip_forward = 1` and then `sudo service network-manager restart`
+`sudo gedit /etc/sysctl.conf`:
+* Uncomment `net.ipv4.ip_forward = 1`
+* `sudo systemctl restart NetworkManager`
 
 ## Enable memory swap
 
-`sudo gedit /etc/default/grub` and add ` cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX` and then `sudo update-grub`. Restart VM.
+`sudo gedit /etc/default/grub`:
+* Add ` cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX` at the end
+* `sudo update-grub`
+* Restart VM.
 
 ## Install/Update `docker-compose`
 
 https://github.com/docker/compose/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "docker-compose" "https://github.com/docker/compose/releases/download/v${VERSION}/docker-compose-linux-x86_64" && chmod +x ./docker-compose && sudo mv ./docker-compose /usr/local/bin/docker-compose
+VERSION="X.X.X"; BINARY="docker-compose"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://github.com/docker/compose/releases/download/v${VERSION}/docker-compose-linux-x86_64" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
 ## Enable `docker-compose` auto-completion
@@ -292,7 +301,7 @@ VERSION="1.29.2"; sudo curl -Lo "/etc/bash_completion.d/docker-compose" "https:/
 
 https://github.com/bcicen/ctop/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "ctop" "https://github.com/bcicen/ctop/releases/download/${VERSION}/ctop-${VERSION}-linux-amd64" && chmod +x ./ctop && sudo mv ./ctop /usr/local/bin/ctop
+VERSION="X.X.X"; BINARY="ctop"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://github.com/bcicen/ctop/releases/download/v${VERSION}/ctop-${VERSION}-linux-amd64" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
 # Kubernetes
