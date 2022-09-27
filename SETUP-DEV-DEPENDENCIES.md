@@ -310,7 +310,7 @@ VERSION="X.X.X"; BINARY="ctop"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https:
 
 https://github.com/kubernetes/kubernetes/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "kubectl" "https://storage.googleapis.com/kubernetes-release/release/v${VERSION}/bin/linux/amd64/kubectl" && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+VERSION="X.X.X"; BINARY="kubectl"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://storage.googleapis.com/kubernetes-release/release/v${VERSION}/bin/linux/amd64/kubectl" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
 ## Enable `kubectl` auto-completion
@@ -323,7 +323,7 @@ kubectl completion bash | sudo tee "/etc/bash_completion.d/kubectl"
 
 https://github.com/kubernetes/minikube/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "minikube" "https://github.com/kubernetes/minikube/releases/download/v${VERSION}/minikube-linux-amd64" && chmod +x ./minikube && sudo mv ./minikube /usr/local/bin/minikube
+VERSION="X.X.X"; BINARY="minikube"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://github.com/kubernetes/minikube/releases/download/v${VERSION}/minikube-linux-amd64" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
 ## Enable `minikube` auto-completion
@@ -342,14 +342,14 @@ minikube delete --all --purge
 
 ```bash
 minikube config set driver docker
-minikube config set kubernetes-version "$(kubectl version --client --short | sed 's/Client Version: v//')"
+minikube config set kubernetes-version "$(kubectl version --client -o yaml | grep -m 1 gitVersion | sed 's/.*gitVersion: v//')"
 ```
 
 ## Install/Update `helm`
 
 https://github.com/helm/helm/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "helm.tar.gz" "https://get.helm.sh/helm-v${VERSION}-linux-amd64.tar.gz" && tar -xzf "helm.tar.gz" "linux-amd64/helm" && rm "helm.tar.gz" && chmod +x ./linux-amd64/helm && sudo mv ./linux-amd64/helm /usr/local/bin/helm && rm -r ./linux-amd64
+VERSION="X.X.X"; BINARY="helm"; curl -Lo "${BINARY}.tar.gz" "https://get.helm.sh/helm-v${VERSION}-linux-amd64.tar.gz" && sudo tar -xzf "${BINARY}.tar.gz" --strip-components=1 -C "/usr/local/bin" "linux-amd64/${BINARY}" && sudo chmod +x "/usr/local/bin/${BINARY}" && rm "${BINARY}.tar.gz"
 ```
 
 ## Enable `helm` auto-completion
@@ -361,5 +361,5 @@ helm completion bash | sudo tee "/etc/bash_completion.d/helm"
 
 https://github.com/derailed/k9s/releases
 ```bash
-VERSION="X.X.X"; curl -Lo "k9s.tar.gz" "https://github.com/derailed/k9s/releases/download/v${VERSION}/k9s_Linux_x86_64.tar.gz" && tar -xzf "k9s.tar.gz" "k9s" && rm "k9s.tar.gz" && chmod +x ./k9s && sudo mv ./k9s /usr/local/bin/k9s
+VERSION="X.X.X"; BINARY="k9s"; curl -Lo "${BINARY}.tar.gz" "https://github.com/derailed/k9s/releases/download/v${VERSION}/k9s_Linux_x86_64.tar.gz" && sudo tar -xzf "${BINARY}.tar.gz" -C "/usr/local/bin" "${BINARY}" && sudo chmod +x "/usr/local/bin/${BINARY}" && rm "${BINARY}.tar.gz"
 ```
