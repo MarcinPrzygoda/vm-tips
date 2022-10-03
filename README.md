@@ -1,2 +1,10 @@
-# vm-tips
-Tips for Virtual Machine
+# VM Tips
+Tips for setting up a new Virtual Machine
+
+## Setup
+
+1. [VMware](SETUP-VMWARE.md)
+2. [Ubuntu](SETUP-UBUNTU.md)
+3. [DEV-Dependencies](SETUP-DEV-DEPENDENCIES.md)
+4. [IntelliJ](SETUP-INTELLIJ.md)
+5. [Terminator](SETUP-TERMINATOR.md)
