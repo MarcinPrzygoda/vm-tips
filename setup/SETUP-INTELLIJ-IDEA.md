@@ -27,7 +27,7 @@ Project:
 ## `Appearance & Behavior` - `Menus and Toolbars`
 
 Navigation Bar Toolbar:
-* Add action `Soft-Wrap` and separator after `CodeWithMeNavbarGroup`
+* After `CodeWithMeNavbarGroup`: add action `Soft-Wrap` and separator
 
 ## `Editor` - `General`
 
