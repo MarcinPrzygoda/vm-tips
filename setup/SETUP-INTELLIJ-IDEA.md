@@ -2,6 +2,7 @@
 * [Plugins](#plugins)
 * [Settings](#settings)
   * [`Appearance & Behavior` - `System Settings`](#appearance--behavior---system-settings)
+  * [`Appearance & Behavior` - `Menus and Toolbars`](#appearance--behavior---menus-and-toolbars)
   * [`Editor` - `General`](#editor---general)
   * [`Version Control` - `Git`](#version-control---git)
 * [Tabs](#tabs)
@@ -22,6 +23,11 @@
 Project:
 * Open project in `New window`
 * Default project directory: `/home/${USER}/projects`
+
+## `Appearance & Behavior` - `Menus and Toolbars`
+
+Navigation Bar Toolbar:
+* Add action `Soft-Wrap` and separator after `CodeWithMeNavbarGroup`
 
 ## `Editor` - `General`
 
