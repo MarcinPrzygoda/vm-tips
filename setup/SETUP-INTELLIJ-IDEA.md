@@ -1,6 +1,7 @@
 <!-- TOC -->
 * [Plugins](#plugins)
 * [Settings](#settings)
+  * [`Appearance & Behavior` - `System Settings`](#appearance--behavior---system-settings)
   * [`Editor` - `General`](#editor---general)
   * [`Version Control` - `Git`](#version-control---git)
 * [Tabs](#tabs)
@@ -15,6 +16,12 @@
 * `SonarLint`
 
 # Settings
+
+## `Appearance & Behavior` - `System Settings`
+
+Project:
+* Open project in `New window`
+* Default project directory: `/home/${USER}/projects`
 
 ## `Editor` - `General`
 
@@ -37,7 +44,7 @@ Update:
 * `Group by` -> `Directory` and `Module`
 
 `Pull Requests` tab -> Options menu:
-* `Move to` -> `Bottom Left`
+* `Remove from sidebar`
 
 ## Notifications
 

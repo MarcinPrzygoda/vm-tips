@@ -26,6 +26,7 @@
   * [Install `vlc`](#install-vlc)
   * [Install `yarn`](#install-yarn)
   * [Add `New Document` Template](#add-new-document-template)
+  * [Show hidden files](#show-hidden-files)
   * [Remove `Ctrl` + `Alt` + `Fn` shortcuts](#remove-ctrl--alt--fn-shortcuts)
   * [Remove `Ctrl` + `Alt` + `Arrow` shortcut](#remove-ctrl--alt--arrow-shortcut)
   * [Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA](#remove-ctrl--shift--u-shortcut---toggle-case-in-intelij-idea)
@@ -324,6 +325,11 @@ sudo npm install -g yarn
 ```bash
 touch "/home/mp/Templates/New Document"
 ```
+
+## Show hidden files
+
+`Files` -> `Settings`:
+* `Show hidden files`
 
 ## Remove `Ctrl` + `Alt` + `Fn` shortcuts
 

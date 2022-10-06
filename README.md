@@ -3,14 +3,14 @@ Tips for setting up a new Virtual Machine
 
 ## Setup
 
-1. [VMware](SETUP-VMWARE.md)
-2. [Ubuntu](SETUP-UBUNTU.md)
-3. [DEV Dependencies](SETUP-DEV-DEPENDENCIES.md)
-4. [IntelliJ IDEA](SETUP-INTELLIJ-IDEA.md)
-5. [Terminator](SETUP-TERMINATOR.md)
+1. [VMware](setup/SETUP-VMWARE.md)
+2. [Ubuntu](setup/SETUP-UBUNTU.md)
+3. [DEV Dependencies](setup/SETUP-DEV-DEPENDENCIES.md)
+4. [IntelliJ IDEA](setup/SETUP-INTELLIJ-IDEA.md)
+5. [Terminator](setup/SETUP-TERMINATOR.md)
 
-## Other
+## Tips
 
-[Installation commands with only one line](INSTALL-ONE-LINER.md)
+[Installation commands with only one line](tips/INSTALL-ONE-LINER.md)
 
-[Fork repository and make it private](FORK-PRIVATE.md)
+[Fork repository and make it private](tips/FORK-PRIVATE.md)
