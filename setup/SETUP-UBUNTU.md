@@ -30,6 +30,7 @@
   * [Remove `Ctrl` + `Alt` + `Fn` shortcuts](#remove-ctrl--alt--fn-shortcuts)
   * [Remove `Ctrl` + `Alt` + `Arrow` shortcut](#remove-ctrl--alt--arrow-shortcut)
   * [Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA](#remove-ctrl--shift--u-shortcut---toggle-case-in-intelij-idea)
+  * [Fix AppImages require FUSE to run](#fix-appimages-require-fuse-to-run)
   * [Fix Mozilla Firefox dark theme bug](#fix-mozilla-firefox-dark-theme-bug)
   * [Fix missing network after Resume from Suspend](#fix-missing-network-after-resume-from-suspend)
 * [Setup Vim](#setup-vim)
@@ -45,53 +46,53 @@
 Open VMware Workstation -> `File` -> `New Virtual Machine` -> `Typical` -> `Browse Installer disc image file (iso)` (https://ubuntu.com/download/desktop)
 
 Easy install operation:
-* Full name: `mp`
-* User name: `mp`
-* Password: `password`
+- Full name: `mp`
+- User name: `mp`
+- Password: `password`
 
 Name the Virtual Machine:
-* Virtual Machine name: `mp-vm`
-* Location: `D:\VM\mp-vm`
+- Virtual Machine name: `mp-vm`
+- Location: `D:\VM\mp-vm`
 
 Specify disk capacity:
-* Maximum disk size: `50 GB`
-* Split virtual disk into multiple files
+- Maximum disk size: `50 GB`
+- Split virtual disk into multiple files
 
 Ready to create Virtual Machine:
-* Customize Hardware:
-    * Memory: `8 GB`
-    * Number of processors: `4`
-    * Remove USB controller
-    * Remove printer
-    * Graphics memory: `1 GB`
+- Customize Hardware:
+  - Memory: `8 GB`
+  - Number of processors: `4`
+  - Remove USB controller
+  - Remove printer
+  - Accelerate 3D graphics: `turn off` to avoid glitches
 
 Keyboard layout:
-* `Polish`/`Polish`
+- `Polish`/`Polish`
 
 Updates and other software:
-* Minimal installation
-* Download updates while installing Ubuntu
-* Install third-party software for graphics and Wi-Fi hardware and additional media formats
+- Minimal installation
+- Download updates while installing Ubuntu
+- Install third-party software for graphics and Wi-Fi hardware and additional media formats
 
 Installation type:
-* `Erase disk and install Ubuntu` -> `Install now` -> `Continue`
+- `Erase disk and install Ubuntu` -> `Install now` -> `Continue`
 
 Where are you?
-* `Warsaw`
+- `Warsaw`
 
 Who are you?
-* Your name: `mp`
-* Your computer's name: `vm`
-* Pick a username: `mp`
-* Choose a password: `password`
-* Log in automatically
+- Your name: `mp`
+- Your computer's name: `vm`
+- Pick a username: `mp`
+- Choose a password: `password`
+- Log in automatically
 
 Ubuntu post-installation:
-* Online Accounts: `skip`
-* Livepatch: `skip`
-* Help improve Ubuntu: `no`
-* Privacy: `off`
-* Software Updater: `Install now`
+- Online Accounts: `skip`
+- Livepatch: `skip`
+- Help improve Ubuntu: `no`
+- Privacy: `off`
+- Software Updater: `Install now`
 
 # Setup Virtual Machine
 
@@ -111,14 +112,14 @@ echo "Kernel version: $(uname -r)"; echo "$(cat '/etc/os-release' | grep 'VERSIO
 ## Update VMware Tools
 
 `Power off` -> `Edit virtual machine settings`:
-* Remove CD/DVD
-* Remove CD/DVD 2
-* Remove Floppy
-* Add `CD/DVD (SATA)` as `Auto Detect` without `Connect at power on`
+- Remove CD/DVD
+- Remove CD/DVD 2
+- Remove Floppy
+- Add `CD/DVD (SATA)` as `Auto Detect` without `Connect at power on`
 
 In VM Options:
-* `Synchronize guest time with host`
-* Set `VMware Tools` to `Update automatically`
+- `Synchronize guest time with host`
+- Set `VMware Tools` to `Update automatically`
 
 <details>
 <summary>Reinstall VMWare Tools in case of problems (usually not needed)</summary>
@@ -137,11 +138,11 @@ sudo rm -r ~/Pulpit/vmware-tools-distrib
 ## Enable shared folders
 
 In VM Options:
-* Set shared folders to `Always enabled`
-* Add shared folder
-* `sudo gedit /etc/fstab`
-  * Add `.host:/ /mnt/hgfs fuse.vmhgfs-fuse defaults,allow_other 0 0`
-* Restart VM
+- Set shared folders to `Always enabled`
+- Add shared folder
+- `sudo gedit /etc/fstab`
+  - Add `.host:/ /mnt/hgfs fuse.vmhgfs-fuse defaults,allow_other 0 0`
+- Restart VM
 
 ## Enable minimize click action to dock
 
@@ -152,39 +153,39 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ## Disable core dumps
 
 `sudo gedit /etc/security/limits.conf`:
-* Change `#* soft core 0` to `* hard core 0`
+- Change `#- soft core 0` to `- hard core 0`
 
 ## Change `journald` size
 
 `sudo gedit /etc/systemd/journald.conf`:
-* Add `SystemMaxUse=100M`
-* Restart with `sudo systemctl restart systemd-journald`
+- Add `SystemMaxUse=100M`
+- Restart with `sudo systemctl restart systemd-journald`
 
 ## Settings - Appearance
 
 `Settings` -> `Appearance`:
-* Style: `Dark`
-* Position of new icons: `Top Left`
-* Icon size: `30`
-* Position on screen: `Bottom`
-* Configure dock behavior:
-  * Show trash: `Off`
+- Style: `Dark`
+- Position of new icons: `Top Left`
+- Icon size: `30`
+- Position on screen: `Bottom`
+- Configure dock behavior:
+  - Show trash: `Off`
 
 ## Settings - Power
 
 `Settings` -> `Power`:
-* Screen blank: `Never`
+- Screen blank: `Never`
 
 ## Settings - Keyboard
 
 `Settings` -> `Keyboard`:
-* `View and Customize shortcuts`:
-  * `Switch windows of an app directly`: remove `Alt+F6`
+- `View and Customize shortcuts`:
+  - `Switch windows of an app directly`: remove `Alt+F6`
 
 ## Settings - Users
 
 `Settings` -> `Users`:
-* Add photo from `~/Pictures`
+- Add photo from `~/Pictures`
 
 ## Install `chromium`
 
@@ -227,10 +228,10 @@ sudo apt install gnome-shell-extension-manager
 ```
 
 Run `extension-manager` and install extensions:
-* `Applications Overview Tooltip`
-* `Apt Update Indicator`
-* `Clock Override`
-* `Force Quit`
+- `Applications Overview Tooltip`
+- `Apt Update Indicator`
+- `Clock Override`
+- `Force Quit`
 
 ## Install `jq`
 
@@ -275,7 +276,7 @@ rm -rf nautilus-open-any-terminal
 ```
 
 `sudo gedit /usr/share/applications/terminator.desktop`:
-* Change `Exec=terminator` to `Exec=terminator --title Terminal --working-directory=/home/mp/projects`
+- Change `Exec=terminator` to `Exec=terminator --title Terminal --working-directory=/home/mp/projects`
 
 ## Install `tldr`
 
@@ -329,7 +330,7 @@ touch "/home/mp/Templates/New Document"
 ## Show hidden files
 
 `Files` -> `Settings`:
-* `Show hidden files`
+- `Show hidden files`
 
 ## Remove `Ctrl` + `Alt` + `Fn` shortcuts
 
@@ -348,13 +349,17 @@ EndSection
 ## Remove `Ctrl` + `Alt` + `Arrow` shortcut
 
 In `dconf-editor` go to: `/org/gnome/desktop/wm/keybindings/`:
-* Find `switch-to-workspace-down` and other `switch-to`: put `['disabled']` instead of `default`
+- Find `switch-to-workspace-down` and other `switch-to`: put `['disabled']` instead of `default`
 
 ## Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA
 
 `Settings` -> `Region & Language` -> `Manage Installed Languages` -> `Remind Me Later`:
-* Change `Keyboard input method system` from `IBus` to `XIM`
-* `Apply system wide`and Reboot
+- Change `Keyboard input method system` from `IBus` to `XIM`
+- `Apply system wide`and Reboot
+
+## Fix AppImages require FUSE to run
+
+`sudo apt install libfuse2`
 
 ## Fix Mozilla Firefox dark theme bug
 

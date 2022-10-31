@@ -13,51 +13,52 @@
 
 # Plugins
 
-* `Save Actions`
-* `SonarLint`
+- `Save Actions`
+- `SonarLint`
+- `Yet another emoji support`
 
 # Settings
 
 ## `Appearance & Behavior` - `System Settings`
 
 Project:
-* Open project in `New window`
-* Default project directory: `/home/${USER}/projects`
+- Open project in `New window`
+- Default project directory: `/home/${USER}/projects`
 
 ## `Appearance & Behavior` - `Menus and Toolbars`
 
 Navigation Bar Toolbar:
-* After `CodeWithMeNavbarGroup`: add action `Soft-Wrap` and separator
+- After `CodeWithMeNavbarGroup`: add action `Soft-Wrap` and separator
 
 ## `Editor` - `General`
 
 Mouse Control:
-* `Change font size with Ctrl+Mouse Wheel` in `All editors`
+- `Change font size with Ctrl+Mouse Wheel` in `All editors`
 
 ## `Version Control` - `Git`
 
 Update:
-* `Update method` to `Rebase`
+- `Update method` to `Rebase`
 
 # Tabs
 
 ## Git
 
 `Commit` tab -> Options menu:
-* `Switch to commit dialog`
+- `Switch to commit dialog`
 
 `Git` tab:
-* `Group by` -> `Directory` and `Module`
+- `Group by` -> `Directory` and `Module`
 
 `Pull Requests` tab -> Options menu:
-* `Remove from sidebar`
+- `Remove from sidebar`
 
 ## Notifications
 
 `Notifications` tab -> Options menu:
-* `Move to` -> `Right Bottom`
+- `Move to` -> `Right Bottom`
 
 # Bottom panel
 
 Right click on bottom panel:
-* `Memory Indicator`
+- `Memory Indicator`

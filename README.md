@@ -1,7 +1,8 @@
 # VM Tips
+
 Tips for setting up a new Virtual Machine
 
-## Setup
+## ⚙️ Setup
 
 1. [VMware](setup/SETUP-VMWARE.md)
 2. [Ubuntu](setup/SETUP-UBUNTU.md)
@@ -9,8 +10,7 @@ Tips for setting up a new Virtual Machine
 4. [IntelliJ IDEA](setup/SETUP-INTELLIJ-IDEA.md)
 5. [Terminator](setup/SETUP-TERMINATOR.md)
 
-## Tips
+## 💡 Tips
 
-[Installation commands with only one line](tips/INSTALL-ONE-LINER.md)
-
-[Fork repository and make it private](tips/FORK-PRIVATE.md)
+- [Installation commands with only one line](tips/INSTALL-ONE-LINER.md)
+- [Fork repository and make it private](tips/FORK-PRIVATE.md)

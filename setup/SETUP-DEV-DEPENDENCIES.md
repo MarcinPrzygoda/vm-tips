@@ -70,12 +70,14 @@ sudo apt install git-lfs
 https://github.com/settings/emails
 
 Turn on:
-* `Keep my email addresses private`
-* `Block command line pushes that expose my email`
+- `Keep my email addresses private`
+- `Block command line pushes that expose my email`
 ```bash
 git config --global user.name "MarcinPrzygoda"
 git config --global user.email "XXXXXXXX+MarcinPrzygoda@users.noreply.github.com"
 ```
+
+[Configure command prompt](https://github.com/MarcinPrzygoda/git-tips/blob/main/branching/CONFIGURE-COMMAND-PROMPT.md)
 
 ## Configure GitHub token
 
@@ -112,7 +114,7 @@ sdkman_auto_complete=true
 ## Configure `sdk`
 
 `gedit ${SDKMAN_DIR}/etc/config`:
-* Change `sdkman_colour_enable` from `true` to `false`
+- Change `sdkman_colour_enable` from `true` to `false`
 
 ## Dependencies
 
@@ -273,15 +275,15 @@ VERSION="X.X"; sudo curl -Lo "/etc/bash_completion.d/docker" "https://raw.github
 ## Enable IPv4 forwarding
 
 `sudo gedit /etc/sysctl.conf`:
-* Uncomment `net.ipv4.ip_forward = 1`
-* `sudo systemctl restart NetworkManager`
+- Uncomment `net.ipv4.ip_forward = 1`
+- `sudo systemctl restart NetworkManager`
 
 ## Enable memory swap
 
 `sudo gedit /etc/default/grub`:
-* Add ` cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX` at the end
-* `sudo update-grub`
-* Restart VM.
+- Add ` cgroup_enable=memory swapaccount=1` to `GRUB_CMDLINE_LINUX` at the end
+- `sudo update-grub`
+- Restart VM.
 
 ## Install/Update `docker-compose`
 
