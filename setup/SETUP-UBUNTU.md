@@ -1,45 +1,44 @@
-<!-- TOC -->
-* [Create Virtual Machine](#create-virtual-machine)
-* [Setup Virtual Machine](#setup-virtual-machine)
-  * [Stop `sudo` password prompt](#stop-sudo-password-prompt)
-  * [Update Ubuntu](#update-ubuntu)
-  * [Update VMware Tools](#update-vmware-tools)
-  * [Enable shared folders](#enable-shared-folders)
-  * [Enable minimize click action to dock](#enable-minimize-click-action-to-dock)
-  * [Disable core dumps](#disable-core-dumps)
-  * [Change `journald` size](#change-journald-size)
-  * [Settings - Appearance](#settings---appearance)
-  * [Settings - Power](#settings---power)
-  * [Settings - Keyboard](#settings---keyboard)
-  * [Settings - Users](#settings---users)
-  * [Install `chromium`](#install-chromium)
-  * [Install `curl`](#install-curl)
-  * [Install `dconf-editor`](#install-dconf-editor)
-  * [Install `gnome-tweaks`](#install-gnome-tweaks)
-  * [Install `gnome-shell-extension-manager`](#install-gnome-shell-extension-manager)
-  * [Install `jq`](#install-jq)
-  * [Install `neofetch`](#install-neofetch)
-  * [Install `terminator`](#install-terminator)
-  * [Install `tldr`](#install-tldr)
-  * [Install `tree`](#install-tree)
-  * [Install `ubuntu-restricted-extras`](#install-ubuntu-restricted-extras)
-  * [Install `vlc`](#install-vlc)
-  * [Install `yarn`](#install-yarn)
-  * [Add `New Document` Template](#add-new-document-template)
-  * [Show hidden files](#show-hidden-files)
-  * [Remove `Ctrl` + `Alt` + `Fn` shortcuts](#remove-ctrl--alt--fn-shortcuts)
-  * [Remove `Ctrl` + `Alt` + `Arrow` shortcut](#remove-ctrl--alt--arrow-shortcut)
-  * [Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA](#remove-ctrl--shift--u-shortcut---toggle-case-in-intelij-idea)
-  * [Fix AppImages require FUSE to run](#fix-appimages-require-fuse-to-run)
-  * [Fix Mozilla Firefox dark theme bug](#fix-mozilla-firefox-dark-theme-bug)
-  * [Fix missing network after Resume from Suspend](#fix-missing-network-after-resume-from-suspend)
-* [Setup Vim](#setup-vim)
-  * [Install NeoVim](#install-neovim)
-  * [Install SpaceVim](#install-spacevim)
-  * [Configure SpaceVim](#configure-spacevim)
-  * [Install Nerd Font](#install-nerd-font)
-  * [Install VimTutor](#install-vimtutor)
-<!-- TOC -->
+- [Create Virtual Machine](#create-virtual-machine)
+- [Setup Virtual Machine](#setup-virtual-machine)
+  - [Stop `sudo` password prompt](#stop-sudo-password-prompt)
+  - [Update Ubuntu](#update-ubuntu)
+  - [Update VMware Tools](#update-vmware-tools)
+  - [Enable shared folders](#enable-shared-folders)
+  - [Enable minimize click action to dock](#enable-minimize-click-action-to-dock)
+  - [Disable core dumps](#disable-core-dumps)
+  - [Change `journald` size](#change-journald-size)
+  - [Settings - Appearance](#settings---appearance)
+  - [Settings - Power](#settings---power)
+  - [Settings - Keyboard](#settings---keyboard)
+  - [Settings - Users](#settings---users)
+  - [Install `chromium`](#install-chromium)
+  - [Install `curl`](#install-curl)
+  - [Install `dconf-editor`](#install-dconf-editor)
+  - [Install `gnome-tweaks`](#install-gnome-tweaks)
+  - [Install `gnome-shell-extension-manager`](#install-gnome-shell-extension-manager)
+  - [Install `jq`](#install-jq)
+  - [Install `neofetch`](#install-neofetch)
+  - [Install `terminator`](#install-terminator)
+  - [Install `tldr`](#install-tldr)
+  - [Install `tree`](#install-tree)
+  - [Install `ubuntu-restricted-extras`](#install-ubuntu-restricted-extras)
+  - [Install `vlc`](#install-vlc)
+  - [Install `xclip`](#install-xclip)
+  - [Install `yarn`](#install-yarn)
+  - [Add `New Document` Template](#add-new-document-template)
+  - [Show hidden files](#show-hidden-files)
+  - [Remove `Ctrl` + `Alt` + `Fn` shortcuts](#remove-ctrl--alt--fn-shortcuts)
+  - [Remove `Ctrl` + `Alt` + `Arrow` shortcut](#remove-ctrl--alt--arrow-shortcut)
+  - [Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA](#remove-ctrl--shift--u-shortcut---toggle-case-in-intelij-idea)
+  - [Fix AppImages require FUSE to run](#fix-appimages-require-fuse-to-run)
+  - [Fix Mozilla Firefox dark theme bug](#fix-mozilla-firefox-dark-theme-bug)
+  - [Fix missing network after Resume from Suspend](#fix-missing-network-after-resume-from-suspend)
+- [Setup Vim](#setup-vim)
+  - [Install NeoVim](#install-neovim)
+  - [Install SpaceVim](#install-spacevim)
+  - [Configure SpaceVim](#configure-spacevim)
+  - [Install Nerd Font](#install-nerd-font)
+  - [Install VimTutor](#install-vimtutor)
 
 # Create Virtual Machine
 
@@ -310,6 +309,14 @@ Multimedia player
 
 ```bash
 sudo snap install vlc
+```
+
+## Install `xclip`
+
+Command line interface to the X11 clipboard. It allows you to put the output of a command directly into the clipboard so that you don't have to copy & paste from the terminal manually (which can be a tedious task especially if the output is very long). It also allows you to put the contents of a file directly into the clipboard
+
+```bash
+sudo apt install xclip
 ```
 
 ## Install `yarn`

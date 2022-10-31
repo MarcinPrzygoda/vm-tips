@@ -1,50 +1,51 @@
-<!-- TOC -->
-* [Git](#git)
-  * [Install `git`](#install-git)
-  * [Install `git-lfs`](#install-git-lfs)
-  * [Configure `git`](#configure-git)
-  * [Configure GitHub token](#configure-github-token)
-* [SdkMan and dependencies](#sdkman-and-dependencies)
-  * [Install `sdk`](#install-sdk)
-  * [Update `sdk`](#update-sdk)
-  * [Enable `sdk` auto-completion](#enable-sdk-auto-completion)
-  * [Configure `sdk`](#configure-sdk)
-  * [Dependencies](#dependencies)
-    * [Install/Update `maven`](#installupdate-maven)
-    * [Install/Update `java`](#installupdate-java)
-    * [Install/Update `spring` - Spring Boot CLI](#installupdate-spring---spring-boot-cli)
-* [IntelliJ IDEA Community](#intellij-idea-community)
-  * [Install IntelliJ IDEA Community](#install-intellij-idea-community)
-  * [Update IntelliJ IDEA Community](#update-intellij-idea-community)
-  * [Add IntelliJ IDEA Community to dock](#add-intellij-idea-community-to-dock)
-  * [Configure IntelliJ IDEA Community](#configure-intellij-idea-community)
-* [Postman](#postman)
-  * [Install/Update Postman](#installupdate-postman)
-  * [Add Postman to dock](#add-postman-to-dock)
-* [Kafka](#kafka)
-  * [Install/Update Kafka](#installupdate-kafka)
-* [Tomcat](#tomcat)
-  * [Install/Update Tomcat](#installupdate-tomcat)
-* [Docker](#docker)
-  * [Install `docker`](#install-docker)
-  * [Update `docker`](#update-docker)
-  * [Enable `docker` auto-completion](#enable-docker-auto-completion)
-  * [Enable IPv4 forwarding](#enable-ipv4-forwarding)
-  * [Enable memory swap](#enable-memory-swap)
-  * [Install/Update `docker-compose`](#installupdate-docker-compose)
-  * [Enable `docker-compose` auto-completion](#enable-docker-compose-auto-completion)
-  * [Install/Update `ctop`](#installupdate-ctop)
-* [Kubernetes](#kubernetes)
-  * [Install/Update `kubectl`](#installupdate-kubectl)
-  * [Enable `kubectl` auto-completion](#enable-kubectl-auto-completion)
-  * [Install/Update `minikube`](#installupdate-minikube)
-  * [Enable `minikube` auto-completion](#enable-minikube-auto-completion)
-  * [Clean `minikube`](#clean-minikube)
-  * [Configure `minikube`](#configure-minikube)
-  * [Install/Update `helm`](#installupdate-helm)
-  * [Enable `helm` auto-completion](#enable-helm-auto-completion)
-  * [Install/Update `k9s`](#installupdate-k9s)
-<!-- TOC -->
+- [Git](#git)
+  - [Install `git`](#install-git)
+  - [Install `git-lfs`](#install-git-lfs)
+  - [Configure `git`](#configure-git)
+  - [Configure GitHub token](#configure-github-token)
+- [SdkMan and dependencies](#sdkman-and-dependencies)
+  - [Install `sdk`](#install-sdk)
+  - [Update `sdk`](#update-sdk)
+  - [Enable `sdk` auto-completion](#enable-sdk-auto-completion)
+  - [Configure `sdk`](#configure-sdk)
+  - [Dependencies](#dependencies)
+    - [Install/Update `maven`](#installupdate-maven)
+    - [Install/Update `java`](#installupdate-java)
+    - [Install/Update `spring` - Spring Boot CLI](#installupdate-spring---spring-boot-cli)
+- [IntelliJ IDEA Community](#intellij-idea-community)
+  - [Install IntelliJ IDEA Community](#install-intellij-idea-community)
+  - [Update IntelliJ IDEA Community](#update-intellij-idea-community)
+  - [Add IntelliJ IDEA Community to dock](#add-intellij-idea-community-to-dock)
+  - [Configure IntelliJ IDEA Community](#configure-intellij-idea-community)
+- [Visual Studio Code](#visual-studio-code)
+  - [Install Visual Studio Code](#install-visual-studio-code)
+  - [Update Visual Studio Code](#update-visual-studio-code)
+- [Postman](#postman)
+  - [Install/Update Postman](#installupdate-postman)
+  - [Add Postman to dock](#add-postman-to-dock)
+- [Kafka](#kafka)
+  - [Install/Update Kafka](#installupdate-kafka)
+- [Tomcat](#tomcat)
+  - [Install/Update Tomcat](#installupdate-tomcat)
+- [Docker](#docker)
+  - [Install `docker`](#install-docker)
+  - [Update `docker`](#update-docker)
+  - [Enable `docker` auto-completion](#enable-docker-auto-completion)
+  - [Enable IPv4 forwarding](#enable-ipv4-forwarding)
+  - [Enable memory swap](#enable-memory-swap)
+  - [Install/Update `docker-compose`](#installupdate-docker-compose)
+  - [Enable `docker-compose` auto-completion](#enable-docker-compose-auto-completion)
+  - [Install/Update `ctop`](#installupdate-ctop)
+- [Kubernetes](#kubernetes)
+  - [Install/Update `kubectl`](#installupdate-kubectl)
+  - [Enable `kubectl` auto-completion](#enable-kubectl-auto-completion)
+  - [Install/Update `minikube`](#installupdate-minikube)
+  - [Enable `minikube` auto-completion](#enable-minikube-auto-completion)
+  - [Clean `minikube`](#clean-minikube)
+  - [Configure `minikube`](#configure-minikube)
+  - [Install/Update `helm`](#installupdate-helm)
+  - [Enable `helm` auto-completion](#enable-helm-auto-completion)
+  - [Install/Update `k9s`](#installupdate-k9s)
 
 # Git
 
@@ -181,6 +182,19 @@ Open `InteliJ IDEA` -> `Welcome Screen` -> `Options menu` -> `Edit Custom VM Opt
 -Xms1024m
 -Xmx2048m
 ```
+
+# Visual Studio Code
+
+## Install Visual Studio Code
+
+https://github.com/microsoft/vscode/releases
+```bash
+curl -Lo "vscode.deb" "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" && sudo dpkg -i "vscode.deb" && rm "vscode.deb"
+```
+
+## Update Visual Studio Code
+
+`Help` -> `Check for Updates...`
 
 # Postman
 

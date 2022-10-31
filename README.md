@@ -8,7 +8,8 @@ Tips for setting up a new Virtual Machine
 2. [Ubuntu](setup/SETUP-UBUNTU.md)
 3. [DEV Dependencies](setup/SETUP-DEV-DEPENDENCIES.md)
 4. [IntelliJ IDEA](setup/SETUP-INTELLIJ-IDEA.md)
-5. [Terminator](setup/SETUP-TERMINATOR.md)
+5. [Visual Studio Code](setup/SETUP-VS-CODE.md)
+6. [Terminator](setup/SETUP-TERMINATOR.md)
 
 ## 💡 Tips
 

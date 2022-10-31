@@ -1,15 +1,13 @@
-<!-- TOC -->
-* [Plugins](#plugins)
-* [Settings](#settings)
-  * [`Appearance & Behavior` - `System Settings`](#appearance--behavior---system-settings)
-  * [`Appearance & Behavior` - `Menus and Toolbars`](#appearance--behavior---menus-and-toolbars)
-  * [`Editor` - `General`](#editor---general)
-  * [`Version Control` - `Git`](#version-control---git)
-* [Tabs](#tabs)
-  * [Git](#git)
-  * [Notifications](#notifications)
-* [Bottom panel](#bottom-panel)
-<!-- TOC -->
+- [Plugins](#plugins)
+- [Settings](#settings)
+  - [`Appearance & Behavior` - `System Settings`](#appearance--behavior---system-settings)
+  - [`Appearance & Behavior` - `Menus and Toolbars`](#appearance--behavior---menus-and-toolbars)
+  - [`Editor` - `General`](#editor---general)
+  - [`Version Control` - `Git`](#version-control---git)
+- [Tabs](#tabs)
+  - [Git](#git)
+  - [Notifications](#notifications)
+- [Bottom panel](#bottom-panel)
 
 # Plugins
 
@@ -22,7 +20,8 @@
 ## `Appearance & Behavior` - `System Settings`
 
 Project:
-- Open project in `New window`
+- Disable `Reopen projects on startup`
+- Open project in `Current window`
 - Default project directory: `/home/${USER}/projects`
 
 ## `Appearance & Behavior` - `Menus and Toolbars`

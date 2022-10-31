@@ -1,8 +1,6 @@
-<!-- TOC -->
-* [Preferences](#preferences)
-  * [Global](#global)
-  * [Profiles](#profiles)
-<!-- TOC -->
+- [Preferences](#preferences)
+  - [Global](#global)
+  - [Profiles](#profiles)
 
 # Preferences
 
