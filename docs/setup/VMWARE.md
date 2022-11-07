@@ -1,6 +1,8 @@
 # 📋 VMWARE
 
-Turn off Virtual Machine and make a backup
+## 📌 Update VMware
+
+Turn off Virtual Machine and make a backup.
 
 In VMware Workstation Pro select `Help` -> `Software Updates`:
 - `Check for Updates`

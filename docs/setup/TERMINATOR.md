@@ -1,10 +1,12 @@
-- [Preferences](#preferences)
+# 📋 TERMINATOR
+
+- [📌 Preferences](#-preferences)
   - [Global](#global)
   - [Profiles](#profiles)
 
-# Preferences
+## 📌 Preferences
 
-## Global
+### Global
 
 Terminal Titlebar:
 
@@ -17,7 +19,7 @@ Font:
 - Uncheck `Use the system font`
 - `Ubuntu Regular 12`
 
-## Profiles
+### Profiles
 
 Colors:
 - Built-in schemes: `White on black`
