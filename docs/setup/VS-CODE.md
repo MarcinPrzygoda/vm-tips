@@ -36,3 +36,6 @@
 
 - `File: Toggle Auto Save`
 - `Duplicate selection` to `ALT + D`
+- `Transform to uppercase` to `CTRL + SHIFT + U`
+- `Add table with header` to `CTRL + ALT + SHIFT + T`
+- `Format document` to `CTRL + ALT + SHIFT + L`
