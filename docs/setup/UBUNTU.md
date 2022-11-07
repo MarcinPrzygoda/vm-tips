@@ -337,7 +337,7 @@ touch "/home/mp/Templates/New Document"
 ## Show hidden files
 
 `Files` -> `Settings`:
-- `Show hidden files`
+- `Show Hidden Files`
 
 ## Remove `Ctrl` + `Alt` + `Fn` shortcuts
 
