@@ -1,5 +1,7 @@
-- [Create Virtual Machine](#create-virtual-machine)
-- [Setup Virtual Machine](#setup-virtual-machine)
+# 📋 UBUNTU
+
+- [📌 Create Virtual Machine](#-create-virtual-machine)
+- [📌 Setup Virtual Machine](#-setup-virtual-machine)
   - [Stop `sudo` password prompt](#stop-sudo-password-prompt)
   - [Update Ubuntu](#update-ubuntu)
   - [Update VMware Tools](#update-vmware-tools)
@@ -33,14 +35,14 @@
   - [Fix AppImages require FUSE to run](#fix-appimages-require-fuse-to-run)
   - [Fix Mozilla Firefox dark theme bug](#fix-mozilla-firefox-dark-theme-bug)
   - [Fix missing network after Resume from Suspend](#fix-missing-network-after-resume-from-suspend)
-- [Setup Vim](#setup-vim)
+- [📌 Setup Vim](#-setup-vim)
   - [Install NeoVim](#install-neovim)
   - [Install SpaceVim](#install-spacevim)
   - [Configure SpaceVim](#configure-spacevim)
   - [Install Nerd Font](#install-nerd-font)
   - [Install VimTutor](#install-vimtutor)
 
-# Create Virtual Machine
+## 📌 Create Virtual Machine
 
 Open VMware Workstation -> `File` -> `New Virtual Machine` -> `Typical` -> `Browse Installer disc image file (iso)` (https://ubuntu.com/download/desktop)
 
@@ -93,22 +95,22 @@ Ubuntu post-installation:
 - Privacy: `off`
 - Software Updater: `Install now`
 
-# Setup Virtual Machine
+## 📌 Setup Virtual Machine
 
-## Stop `sudo` password prompt
+### Stop `sudo` password prompt
 
 `sudo visudo` and paste the below at the end of the file:
 ```bash
 mp ALL=(ALL) NOPASSWD: ALL
 ```
 
-## Update Ubuntu
+### Update Ubuntu
 
 ```bash
 echo "Kernel version: $(uname -r)"; echo "$(cat '/etc/os-release' | grep 'VERSION=' | sed 's/VERSION=/Ubuntu version: /;s/"//g')"; sudo apt -y update; sudo apt -y upgrade; sudo apt dist-upgrade; sudo apt autoremove --purge; sudo apt -y autoclean; echo "Kernel version: $(uname -r)"; echo "$(cat '/etc/os-release' | grep 'VERSION=' | sed 's/VERSION=/Ubuntu version: /;s/"//g')"
 ```
 
-## Update VMware Tools
+### Update VMware Tools
 
 `Power off` -> `Edit virtual machine settings`:
 - Remove CD/DVD
@@ -134,7 +136,7 @@ sudo rm -r ~/Pulpit/vmware-tools-distrib
 
 </details>
 
-## Enable shared folders
+### Enable shared folders
 
 In VM Options:
 - Set shared folders to `Always enabled`
@@ -143,24 +145,24 @@ In VM Options:
   - Add `.host:/ /mnt/hgfs fuse.vmhgfs-fuse defaults,allow_other 0 0`
 - Restart VM
 
-## Enable minimize click action to dock
+### Enable minimize click action to dock
 
 ```bash
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 
-## Disable core dumps
+### Disable core dumps
 
 `sudo gedit /etc/security/limits.conf`:
 - Change `#- soft core 0` to `- hard core 0`
 
-## Change `journald` size
+### Change `journald` size
 
 `sudo gedit /etc/systemd/journald.conf`:
 - Add `SystemMaxUse=100M`
 - Restart with `sudo systemctl restart systemd-journald`
 
-## Settings - Appearance
+### Settings - Appearance
 
 `Settings` -> `Appearance`:
 - Style: `Dark`
@@ -170,23 +172,23 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 - Configure dock behavior:
   - Show trash: `Off`
 
-## Settings - Power
+### Settings - Power
 
 `Settings` -> `Power`:
 - Screen blank: `Never`
 
-## Settings - Keyboard
+### Settings - Keyboard
 
 `Settings` -> `Keyboard`:
 - `View and Customize shortcuts`:
   - `Switch windows of an app directly`: remove `Alt+F6`
 
-## Settings - Users
+### Settings - Users
 
 `Settings` -> `Users`:
 - Add photo from `~/Pictures`
 
-## Install `chromium`
+### Install `chromium`
 
 Web browser, open-source version of Google Chrome
 
@@ -194,7 +196,7 @@ Web browser, open-source version of Google Chrome
 sudo snap install chromium
 ```
 
-## Install `curl`
+### Install `curl`
 
 Transfers a URL
 
@@ -202,7 +204,7 @@ Transfers a URL
 sudo apt install curl
 ```
 
-## Install `dconf-editor`
+### Install `dconf-editor`
 
 Graphical editor for `gsettings` and `dconf`
 
@@ -210,7 +212,7 @@ Graphical editor for `gsettings` and `dconf`
 sudo apt install dconf-editor
 ```
 
-## Install `gnome-tweaks`
+### Install `gnome-tweaks`
 
 Customizes GNOME desktop
 
@@ -218,7 +220,7 @@ Customizes GNOME desktop
 sudo apt install gnome-tweaks
 ```
 
-## Install `gnome-shell-extension-manager`
+### Install `gnome-shell-extension-manager`
 
 Extension manager for GNOME desktop
 
@@ -232,7 +234,7 @@ Run `extension-manager` and install extensions:
 - `Clock Override`
 - `Force Quit`
 
-## Install `jq`
+### Install `jq`
 
 Command-line JSON processor
 
@@ -240,7 +242,7 @@ Command-line JSON processor
 sudo apt install jq
 ```
 
-## Install `neofetch`
+### Install `neofetch`
 
 Fast, highly customizable system info script
 
@@ -248,7 +250,7 @@ Fast, highly customizable system info script
 sudo apt install neofetch
 ```
 
-## Install `terminator`
+### Install `terminator`
 
 Multiple GNOME terminals in one window
 
@@ -277,7 +279,7 @@ rm -rf nautilus-open-any-terminal
 `sudo gedit /usr/share/applications/terminator.desktop`:
 - Change `Exec=terminator` to `Exec=terminator --title Terminal --working-directory=/home/mp/projects`
 
-## Install `tldr`
+### Install `tldr`
 
 Simplified and community-driven man pages
 
@@ -287,7 +289,7 @@ sudo apt install npm
 sudo npm install -g tldr
 ```
 
-## Install `tree`
+### Install `tree`
 
 Lists content of directories in a tree-like format
 
@@ -295,7 +297,7 @@ Lists content of directories in a tree-like format
 sudo apt install tree
 ```
 
-## Install `ubuntu-restricted-extras`
+### Install `ubuntu-restricted-extras`
 
 Support for MP3 and unencrypted DVD playback, Microsoft TrueType core fonts, Adobe Flash plugin and codecs for common audio and video files
 
@@ -303,7 +305,7 @@ Support for MP3 and unencrypted DVD playback, Microsoft TrueType core fonts, Ado
 sudo apt install ubuntu-restricted-extras
 ```
 
-## Install `vlc`
+### Install `vlc`
 
 Multimedia player
 
@@ -311,7 +313,7 @@ Multimedia player
 sudo snap install vlc
 ```
 
-## Install `xclip`
+### Install `xclip`
 
 Command line interface to the X11 clipboard. It allows you to put the output of a command directly into the clipboard so that you don't have to copy & paste from the terminal manually (which can be a tedious task especially if the output is very long). It also allows you to put the contents of a file directly into the clipboard
 
@@ -319,7 +321,7 @@ Command line interface to the X11 clipboard. It allows you to put the output of 
 sudo apt install xclip
 ```
 
-## Install `yarn`
+### Install `yarn`
 
 Compiles Casper theme for Ghost
 
@@ -328,18 +330,18 @@ sudo apt install npm
 sudo npm install -g yarn
 ```
 
-## Add `New Document` Template
+### Add `New Document` Template
 
 ```bash
 touch "/home/mp/Templates/New Document"
 ```
 
-## Show hidden files
+### Show hidden files
 
 `Files` -> `Settings`:
 - `Show Hidden Files`
 
-## Remove `Ctrl` + `Alt` + `Fn` shortcuts
+### Remove `Ctrl` + `Alt` + `Fn` shortcuts
 
 `sudo gedit /etc/X11/xorg.conf` and add:
 ```
@@ -353,22 +355,22 @@ Section "InputClass"
 EndSection
 ```
 
-## Remove `Ctrl` + `Alt` + `Arrow` shortcut
+### Remove `Ctrl` + `Alt` + `Arrow` shortcut
 
 In `dconf-editor` go to: `/org/gnome/desktop/wm/keybindings/`:
 - Find `switch-to-workspace-down` and other `switch-to`: put `['disabled']` instead of `default`
 
-## Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA
+### Remove `Ctrl` + `Shift` + `U` shortcut - toggle case in InteliJ IDEA
 
 `Settings` -> `Region & Language` -> `Manage Installed Languages` -> `Remind Me Later`:
 - Change `Keyboard input method system` from `IBus` to `XIM`
 - `Apply system wide`and Reboot
 
-## Fix AppImages require FUSE to run
+### Fix AppImages require FUSE to run
 
 `sudo apt install libfuse2`
 
-## Fix Mozilla Firefox dark theme bug
+### Fix Mozilla Firefox dark theme bug
 
 `sudo gedit /usr/lib/firefox/firefox.sh` and add:
 ```bash
@@ -378,7 +380,7 @@ export GTK_THEME
 export MOZ_APP_LAUNCHER
 ```
 
-## Fix missing network after Resume from Suspend
+### Fix missing network after Resume from Suspend
 
 `sudo gedit /etc/pm/sleep.d/network_restart` and add:
 ```bash
@@ -390,34 +392,34 @@ esac
 ```
 Then `sudo chmod +x /etc/pm/sleep.d/network_restart`
 
-# Setup Vim
+## 📌 Setup Vim
 
-## Install NeoVim
+### Install NeoVim
 
 ```bash
 sudo apt install neovim
 ```
 
-## Install SpaceVim
+### Install SpaceVim
 
 ```bash
 curl -sLf "https://spacevim.org/install.sh" | bash
 ```
 
-## Configure SpaceVim
+### Configure SpaceVim
 
 ```bash
 sudo apt install fonts-powerline
 ```
 `sudo gedit ~/.SpaceVim.d/init.toml` and change `statusline_separator = "nil"` to `statusline_separator = "arrow"`
 
-## Install Nerd Font
+### Install Nerd Font
 
 Search for `SourceCodePro` on https://www.nerdfonts.com/font-downloads
 
 Download it and unzip it to `~/.local/share/fonts` and run `fc-cache -fv`
 
-## Install VimTutor
+### Install VimTutor
 
 ```bash
 sudo apt install vim-runtime

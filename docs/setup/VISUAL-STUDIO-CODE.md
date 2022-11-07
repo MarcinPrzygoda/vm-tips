@@ -1,10 +1,10 @@
-- [Extensions](#extensions)
-  - [Extensions Settings](#extensions-settings)
-    - [Paste Image](#paste-image)
-    - [Markdown Shortcuts](#markdown-shortcuts)
-- [Settings](#settings)
+# 📋 VISUAL STUDIO CODE
 
-# Extensions
+- [📌 Extensions](#-extensions)
+  - [Extensions Settings](#extensions-settings)
+- [📌 Settings](#-settings)
+
+## 📌 Extensions
 
 - `:emojisense:`
 - `Code Spell Checker`
@@ -13,16 +13,17 @@
 - `Material Icon Theme`
 - `Paste Image`
 
-## Extensions Settings
+### Extensions Settings
 
-### Paste Image
-
+Paste Image:
 - `Paste Image: File Path Confirm Input Box` to `onlyName`
 - `Paste Image: Path` to `${currentFileDir}/images`
 - Enable `Paste Image: Show File Path Confirm Input Box`
 
-### Markdown Shortcuts
+Markdown All in One
+- `Toc: Levels` to `2..6`
 
+Markdown Shortcuts:
 - `Bullets Marker` to `-`
 - Disable `Show bold icon in title bar`
 - Disable `Show italic icon in title bar`
@@ -30,10 +31,9 @@
 - Enable `Show citations icon in title bar`
 - Enable `Show link icon in title bar`
 
-# Settings
+## 📌 Settings
 
-`CTRL + SHIFT + P`
-
+`CTRL + SHIFT + P`:
 - `File: Toggle Auto Save`
 - `Duplicate selection` to `ALT + D`
 - `Transform to uppercase` to `CTRL + SHIFT + U`

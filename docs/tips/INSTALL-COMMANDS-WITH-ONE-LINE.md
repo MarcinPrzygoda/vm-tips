@@ -1,18 +1,18 @@
-# Installation commands with only one line
+# 📋 INSTALL COMMANDS WITH ONE LINE
 
-## Remote `bash.sh`
+## 📌 Remote `bash.sh`
 
 ```bash
 curl -s https://bash.sh | bash
 ```
 
-## Remote binary
+## 📌 Remote binary
 
 ```bash
 VERSION="X.X.X"; BINARY="X"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://github.com/binary/binary/releases/download/v${VERSION}/binary" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
-## Remote `tar.gz`
+## 📌 Remote `tar.gz`
 
 ```bash
 # Binary
@@ -22,7 +22,7 @@ VERSION="X.X.X"; BINARY="X"; curl -Lo "${BINARY}.tar.gz" "https://github.com/bin
 VERSION="X.X.X"; DIRECTORY="X"; curl -Lo "${DIRECTORY}.tar.gz" "https://github.com/directory/directory/releases/download/v${VERSION}/directory.tar.gz" && [[ -d "/opt/${DIRECTORY}" ]] && rm -r "/opt/${DIRECTORY}"; mkdir "/opt/${DIRECTORY}" && tar -xzf "${DIRECTORY}.tar.gz" --strip-components=1 -C "/opt/${DIRECTORY}" && rm "${DIRECTORY}.tar.gz"
 ```
 
-## Remote `tar`
+## 📌 Remote `tar`
 
 ```bash
 # Binary
