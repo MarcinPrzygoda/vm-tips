@@ -1,8 +1,10 @@
 # 📖 VM TIPS
 
-<a href="https://ubuntu.com/" rel="noreferrer">
-    <img src="https://img.shields.io/badge/OS-Ubuntu-E95420" alt="OS: Ubuntu"/>
-</a>
+<p>
+  <a href="https://ubuntu.com/" rel="noreferrer">
+      <img src="https://img.shields.io/badge/OS-Ubuntu-E95420?logo=ubuntu&logoColor=white" alt="OS: Ubuntu"/>
+  </a>
+</p>
 
 Tips for setting up a new Virtual Machine
 
