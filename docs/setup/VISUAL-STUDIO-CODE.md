@@ -33,6 +33,9 @@ Markdown Shortcuts:
 
 ## 📌 Settings
 
+- Enable `Extensions` -> `Markdown` -> `Occurrences Highlight: Enabled`
+- `Extensions` -> `Markdown` -> `Update Links On File Move: Enabled` to `always`
+
 `CTRL + SHIFT + P`:
 - `File: Toggle Auto Save`
 - `Duplicate selection` to `ALT + D`
