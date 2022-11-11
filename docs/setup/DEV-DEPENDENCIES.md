@@ -75,6 +75,7 @@ Turn on:
 ```bash
 git config --global user.name "MarcinPrzygoda"
 git config --global user.email "XXXXXXXX+MarcinPrzygoda@users.noreply.github.com"
+git config --global init.defaultBranch "main"
 ```
 
 [Configure command prompt](https://github.com/MarcinPrzygoda/git-tips/blob/main/branching/CONFIGURE-COMMAND-PROMPT.md)
