@@ -35,18 +35,18 @@ alias versions="~/projects/vm-tips/scripts/versions.sh"
 alias buildClasspath="mvn dependency:build-classpath"
 alias dependencyTree="mvn dependency:tree"
 alias effectivePom="mvn help:effective-pom"
-alias m2="sudo gedit ~/.m2/settings.xml &"
+alias m2="code ~/.m2/settings.xml"
 
 ## Ubuntu
 
-alias bashrc="sudo gedit ~/.bashrc &"
-alias bashaliases="sudo gedit ~/.bash_aliases &"
+alias bashrc="code ~/.bashrc"
+alias bashaliases="code ~/.bash_aliases"
 alias checkInternet="nmcli device"
 alias clear="tput reset"
 alias fixInternet="sudo systemctl restart NetworkManager"
 alias hosts="sudo gedit /etc/hosts &"
-alias largestdir='sudo du -cks .[!.]* * | sort -nr | head $@'
-alias largestfile='sudo find . -type f -printf "%s %p\n" | sort -nr | head $@'
+alias largestdir='sudo du -hs ?(.)[!.]* | sort -hr | head -n 15'
+alias largestfile='sudo find . -type f -size +100M -exec du -h '{}' + | sort -hr | head -n 15'
 alias src="cd ~/projects"
 alias terminator="terminator --title 'Terminal'"
 
