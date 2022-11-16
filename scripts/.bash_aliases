@@ -45,7 +45,7 @@ alias checkInternet="nmcli device"
 alias clear="tput reset"
 alias fixInternet="sudo systemctl restart NetworkManager"
 alias hosts="sudo gedit /etc/hosts &"
-alias largestdir='sudo du -hs ?(.)[!.]* | sort -hr | head -n 15'
+alias largestdir='sudo du -hs --threshold=100M ?(.)[!.]* | sort -hr | head -n 15'
 alias largestfile='sudo find . -type f -size +100M -exec du -h '{}' + | sort -hr | head -n 15'
 alias src="cd ~/projects"
 alias terminator="terminator --title 'Terminal'"
