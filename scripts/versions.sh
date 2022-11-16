@@ -41,6 +41,7 @@ main() {
   printVersion "GIT" "$(git version | sed "s/git version //")" "https://git-scm.com/downloads"
   printVersion "GIT LFS" "$(git lfs version | sed "s/git-lfs\///;s/ (GitHub.*//")" "https://git-lfs.github.com/"
   printVersion "INTELIJ IDEA COMMUNITY" "$(cat "/opt/intellij-idea/product-info.json" | jq ".version" | sed "s/\"//g")" "https://www.jetbrains.com/idea/download/#section=linux"
+  printVersion "VISUAL STUDIO CODE" "$(code -v | head -n 1)" "https://github.com/microsoft/vscode/releases"
   printVersion "JAVA (Oracle)" "$(java --version | grep "java.*LTS" | sed "s/java //;s/ .*//")" "https://www.java.com/releases"
   printVersion "KAFKA" "$(cat "/opt/kafka/gradle.properties" | grep "version=" | sed "s/version=//")" "https://kafka.apache.org/downloads"
   printVersion "MAVEN" "$(mvn --version | grep "Apache Maven" | sed "s/Apache Maven //;s/ .*//")" "https://maven.apache.org/docs/history.html"
