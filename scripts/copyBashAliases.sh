@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copies .bash_aliases to /home/${USER}
+# Copies .bash_aliases to ${HOME}
 
 #############
 # Functions #
@@ -10,8 +10,8 @@ lightGreen() {
 }
 
 main() {
-  echo -n "Copying .bash_aliases to /home/${USER} ... "
-  cp ".bash_aliases" "/home/${USER}"
+  echo -n "Copying .bash_aliases to ${HOME} ... "
+  cp ".bash_aliases" "${HOME}"
   echo -e "$(lightGreen 'done')"
 }
 
