@@ -9,6 +9,8 @@ alias dls="docker container ls -a --format 'table {{.ID}}\t{{.Image}}\t{{.Create
 alias dlsize="docker container ls -a --format 'table {{.ID}}\t{{.Image}}\t{{.CreatedAt}}\t{{.Status}}\t{{.Names}}\t{{.Size}}'"
 alias dils="docker image ls"
 alias dilsa="docker image ls -a"
+alias dnls="docker network ls"
+alias dvls="docker volume ls"
 alias fixDocker="sudo systemctl restart NetworkManager docker"
 alias fixDockerDanglingImages="docker image rm $(docker image ls --filter 'dangling=true' -q --no-trunc)"
 
@@ -32,9 +34,10 @@ alias versions="~/projects/vm-tips/scripts/versions.sh"
 
 ## Maven
 
-alias buildClasspath="mvn dependency:build-classpath"
-alias dependencyTree="mvn dependency:tree"
-alias effectivePom="mvn help:effective-pom"
+alias mvnBuildClasspath="mvn dependency:build-classpath"
+alias mvnDependencyTree="mvn dependency:tree"
+alias mvnEffectivePom="mvn help:effective-pom"
+alias mvnSourcesJavadoc="mvn dependency:sources dependency:resolve -Dclassifier=javadoc"
 alias m2="code ~/.m2/settings.xml"
 
 ## Ubuntu
