@@ -63,7 +63,6 @@ Ready to create Virtual Machine:
 - Customize Hardware:
   - Memory: `8 GB`
   - Number of processors: `4`
-  - Remove USB controller
   - Remove printer
   - Accelerate 3D graphics: `turn off` to avoid glitches
 
