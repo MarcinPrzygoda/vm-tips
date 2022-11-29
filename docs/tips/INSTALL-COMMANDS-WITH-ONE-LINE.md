@@ -12,6 +12,12 @@ curl -s https://bash.sh | bash
 VERSION="X.X.X"; BINARY="X"; sudo curl -Lo "/usr/local/bin/${BINARY}" "https://github.com/binary/binary/releases/download/v${VERSION}/binary" && sudo chmod +x "/usr/local/bin/${BINARY}"
 ```
 
+## 📌 Remote `deb`
+
+```bash
+VERSION="X.X.X"; BINARY="X.deb"; curl -Lo "${BINARY}" "https://github.com/binary/binary/releases/download/v${VERSION}/binary.deb" && sudo apt install "${BINARY}" && rm "${BINARY}"
+```
+
 ## 📌 Remote `tar.gz`
 
 ```bash
