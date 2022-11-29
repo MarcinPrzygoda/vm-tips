@@ -11,6 +11,8 @@
   - [Enable `sdk` auto-completion](#enable-sdk-auto-completion)
   - [Configure `sdk`](#configure-sdk)
   - [Dependencies](#dependencies)
+- [📌 KeyStore Explorer](#-keystore-explorer)
+  - [Install/Update KeyStore Explorer](#installupdate-keystore-explorer)
 - [📌 IntelliJ IDEA Community](#-intellij-idea-community)
   - [Install IntelliJ IDEA Community](#install-intellij-idea-community)
   - [Update IntelliJ IDEA Community](#update-intellij-idea-community)
@@ -141,6 +143,15 @@ https://github.com/spring-projects/spring-boot/releases
 ```bash
 sdk list springboot
 sdk install springboot X.X.X
+```
+
+## 📌 KeyStore Explorer
+
+### Install/Update KeyStore Explorer
+
+https://github.com/kaikramer/keystore-explorer/releases
+```bash
+VERSION="X.X.X"; BINARY="kse.deb"; curl -Lo "${BINARY}" "https://github.com/kaikramer/keystore-explorer/releases/download/v${VERSION}/kse_${VERSION}_all.deb" && sudo apt install "${BINARY}" && rm "${BINARY}"
 ```
 
 ## 📌 IntelliJ IDEA Community
